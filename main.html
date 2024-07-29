@@ -116,7 +116,7 @@
 
       <div class="serch">
         <input class="input" id="search_movie" type="text" required />
-        <button class="search-button" onclick="searchReusult()">검색</button>
+        <button class="search-button" onclick="searchResult()">검색</button>
         <span></span>
       </div>
     </div>
@@ -158,15 +158,15 @@
               : "https://via.placeholder.com/200x300";
 
             card.innerHTML = `
-            <div class="list-1">
-              <img src="${imageUrl}" alt="${movie.title} 포스터" />
-              <div class="comment">
-                <h4>${movie.title}</h4>
-                <p>${movie.overview}</p>
-                <p>평점: ${movie.vote_average}</p>
-              </div>
-            </div>
-          `;
+                        <div class="list-1">
+                          <img src="${imageUrl}" alt="${movie.title} 포스터" />
+                          <div class="comment">
+                            <h4>${movie.title}</h4>
+                            <p>${movie.overview}</p>
+                            <p>평점: ${movie.vote_average}</p>
+                          </div>
+                        </div>
+                      `;
 
             // 카드를 클릭했을 때의 동작 설정
             card.addEventListener("click", () => {
@@ -182,14 +182,14 @@
         });
 
       // 검색기능
-      function searchReusult() {
+      function searchResult() {
         const movieName = document.getElementById("search_movie").value;
         console.log(movieName);
 
-        for (i = 0; i < 20; i++) {
-          //  const arr = array1[i];
-          // console.log(arr);
-        }
+        /*for (i = 0; i < 20; i++) {
+          const arr = array1[i];
+          console.log(arr);
+        }*/
       }
     </script>
   </body>
