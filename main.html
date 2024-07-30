@@ -138,11 +138,13 @@
 
       let movieArray = [];
 
+      // 검색 버튼 클릭 시 호출되는 함수
       function searchResult() {
         const searchKeyword = document.getElementById("search_movie").value;
         handleSearch(searchKeyword);
       }
 
+      // 영화 제목을 기반으로 필터링하는 함수
       function handleSearch(searchKeyword) {
         const movieCards = document.querySelectorAll(".card");
         movieCards.forEach((card) => {
@@ -158,6 +160,7 @@
         });
       }
 
+      // 영화 데이터를 가져와 카드로 표시하는 함수
       fetch(
         "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
         options
@@ -175,15 +178,15 @@
               : "https://via.placeholder.com/200x300";
 
             card.innerHTML = `
-              <div class="list-1">
-                <img src="${imageUrl}" alt="${movie.title} 포스터" />
-                <div class="comment">
-                  <h4>${movie.title}</h4>
-                  <p>${movie.overview}</p>
-                  <p>평점: ${movie.vote_average}</p>
-                </div>
-              </div>
-            `;
+        <div class="list-1">
+          <img src="${imageUrl}" alt="${movie.title} 포스터" />
+          <div class="comment">
+            <h4>${movie.title}</h4>
+            <p>${movie.overview}</p>
+            <p>평점: ${movie.vote_average}</p>
+          </div>
+        </div>
+      `;
 
             card.addEventListener("click", () => {
               alert("클릭한 카드의 ID는 " + movie.id + " 입니다.");
